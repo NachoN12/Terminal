@@ -158,8 +158,8 @@ int main(int argc, char const *argv[]){
 		//parse(input,aux,aux2); //se parsea input, y se guarda en aux
 		
              if (strcmp(input, "exit")==0){
-         kill(cpid, SIGTERM); //termina el programa
-         break;
+        // kill(cpid, SIGTERM); //termina el programa
+         return 0;
       }
     parse(input, aux, aux2, &flag);    //se parsea input, y se guarda en aux
       if(*aux!='\0'){
