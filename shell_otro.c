@@ -7,6 +7,7 @@
 #include <string.h>
 #include <fcntl.h>
 #include <sys/types>
+#include <sys/wait.h>
 
 
 int parse(char *input, char *aux[], char **puntero_aux, int *flag_puntero){
