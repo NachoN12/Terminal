@@ -6,7 +6,6 @@
 #include <signal.h>		//kill
 #include <string.h>
 #include <fcntl.h>
-#include <sys/types>
 #include <sys/wait.h>
 
 
