@@ -6,6 +6,7 @@
 #include <signal.h>		//kill
 #include <string.h>
 #include <fcntl.h>
+include<sys/types>
 
 
 int parse(char *input, char *aux[], char **puntero_aux, int *flag_puntero){
