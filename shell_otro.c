@@ -6,6 +6,7 @@
 #include <signal.h>		//kill
 #include <string.h>
 #include <fcntl.h>
+#include <sys/wait.h>
 
 
 int parse(char *input, char *aux[], char **puntero_aux, int *flag_puntero){
@@ -143,11 +144,11 @@ void ejecutar(char **aux, int flag, char **puntero_aux, char *input){
 }
 
 int main(int argc, char const *argv[]){
-	pid_t cpid;   // se obtiene el id del proceso
+	//pid_t cpid;   // se obtiene el id del proceso
   int flag;
 	while (1){
     flag=0;  //bandera de estados
-		wait(cpid); // Espera que termine el proceso hijo
+//		wait(cpid); // Espera que termine el proceso hijo
 		printf("yash:>");
 		char input[56];  //arreglo de caracteres que guarda lo que se ingresa por teclado
 		char *aux2[30];
@@ -157,8 +158,8 @@ int main(int argc, char const *argv[]){
 		//parse(input,aux,aux2); //se parsea input, y se guarda en aux
 		
              if (strcmp(input, "exit")==0){
-         kill(cpid, SIGTERM); //termina el programa
-         break;
+        // kill(cpid, SIGTERM); //termina el programa
+         return 0;
       }
     parse(input, aux, aux2, &flag);    //se parsea input, y se guarda en aux
       if(*aux!='\0'){
